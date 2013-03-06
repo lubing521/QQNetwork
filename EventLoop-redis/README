@@ -1,0 +1,9 @@
+Extracts out the eventloop library used by redis, and wrap it as a static 
+library.
+
+1) create eventloop
+2) add the listenfd into eventloop,register acceptHandler
+3) after accepting the connection, add connfd into eventloop,
+register readFromQuery
+4) analyse the query, for example, then add_reply
+5) add_reply register a writable event into Eventloop
